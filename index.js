@@ -59,7 +59,8 @@ const booksResolvers = {
 const server = new ApolloServer({
     typeDefs: schemas,
     resolvers: booksResolvers,
-    playground: true
+    playground: true,
+    introspection: true
 });
 
 server.listen(port).then(({ url }) => {
