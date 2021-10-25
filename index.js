@@ -1,5 +1,7 @@
 const { ApolloServer, gql } = require("apollo-server");
 
+const port = process.env.PORT || 8000;
+
 // Schemas
 // Resolvers
 
@@ -56,7 +58,7 @@ const booksResolvers = {
 
 const server = new ApolloServer({ typeDefs: schemas, resolvers: booksResolvers });
 
-server.listen(8000).then(({ url }) => {
+server.listen(port).then(({ url }) => {
     console.log(`Server ready at ${url} and ready to be used`);
 }).catch(err => console.log(err.message));
 
